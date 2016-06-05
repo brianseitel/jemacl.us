@@ -17,6 +17,7 @@ class Paste extends Model
 
     public static function generateShortUrl()
     {
+        $url = null;
         while (!$url) {
             $url = str_random(16);
             $exists = Paste::where('short_url', $url)->first();
