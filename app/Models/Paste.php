@@ -15,7 +15,7 @@ class Paste extends Model
         'short_url', 'pasted_data',
     ];
 
-    public function generateShortUrl()
+    public static function generateShortUrl()
     {
         while (!$url) {
             $url = str_random(16);
