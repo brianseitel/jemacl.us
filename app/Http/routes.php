@@ -11,7 +11,7 @@
 |
  */
 
-Route::get('/', 'HomeController@index')->name('index');
-Route::post('/new', 'HomeController@create')->name('new');
-Route::get('/{paste}', 'HomeController@show')->name('show');
-Route::get('/{paste}/fork', 'HomeController@fork')->name('fork');
+Route::get('/', 'PasteController@index')->name('index');
+Route::post('/new', 'PasteController@create')->name('new');
+Route::get('/{paste}', 'PasteController@show')->name('show');
+Route::get('/{paste}/fork', 'PasteController@fork')->name('fork');
