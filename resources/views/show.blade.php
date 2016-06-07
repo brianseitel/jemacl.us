@@ -47,7 +47,12 @@
         myCodeMirror.setOption('readOnly', 'nocursor');
 
         $('.CodeMirror').css('height', $(window).height() - $('.header').height() - 100);
+
+        var mode = languages.detect(myCodeMirror.getDoc().getValue()) || "null";
+        myCodeMirror.setOption("mode", mode);
      });
     </script>
+    <script src="/js/detect.js"></script>
+
 </body>
 </html>
