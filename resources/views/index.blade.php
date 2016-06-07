@@ -47,7 +47,17 @@
         var myCodeMirror = CodeMirror.fromTextArea(document.getElementById('data'), options);
 
         $('.CodeMirror').css('height', $(window).height() - $('.header').height() - 100);
+
+        $('.CodeMirror').on('keyup', detectLanguage);
+
+        function detectLanguage()
+        {
+            var mode = languages.detect(myCodeMirror.getDoc().getValue()) || "null";
+            myCodeMirror.setOption("mode", mode);
+        }
      });
     </script>
+    <script src="/js/detect.js"></script>
+
 </body>
 </html>
